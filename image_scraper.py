@@ -15,6 +15,10 @@ def get_soup(query='birds'):
         print('Status code:', page.status_code)
 
 def extract_images(soup):
+    '''
+    Returns a list of image URLs extracted from the HTML source
+    of the given BeautifulSoup object.
+    '''
     images = []
     for link in soup.find_all('img'):
         src = link.get('src2')
@@ -24,6 +28,10 @@ def extract_images(soup):
     return images
 
 def download_image(url, folder, pos=1):
+    '''
+    Downloads the image from the given URL and saves it in the
+    given folder with the given position in the filename.
+    '''
     w=256
     h=256
     url = url.replace('w=42',f'w={w}').replace('h=42',f'h={h}')
