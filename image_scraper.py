@@ -47,6 +47,8 @@ def download_image(url, folder, pos=1):
         print('Status code:', page.status_code)
 
 if __name__ == '__main__':
+    # EXAMPLE USAGE
+    # soup = get_soup('cats')
     soup = get_soup('birds')
     images = extract_images(soup)
     for idx,image in enumerate(images):
